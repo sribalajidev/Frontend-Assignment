@@ -1,0 +1,38 @@
+# Ignore configuration files that may contain sensitive data.
+sites/*/settings*.php
+sites/*/services.yml
+
+# Ignore paths that contain user-generated content.
+sites/*/files
+sites/*/private
+
+# Ignore backup files and temporary files.
+*.sql
+*.tar.gz
+*.zip
+*.bak
+*.orig
+*.swp
+*.tmp
+
+# Ignore vendor and contributed code.
+/vendor
+/web/core
+/web/modules/contrib
+/web/themes/contrib
+/web/libraries
+
+# Ignore npm and Composer files
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+/package-lock.json
+/composer.lock
+
+# Ignore the Gulp folder and SASS cache.
+.gulp/
+.sass-cache/
+
+# Ignore system files
+.DS_Store
