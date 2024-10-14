@@ -1,3 +1,6 @@
+# Ignore DDEV configuration files and directories
+.ddev/
+
 # Ignore configuration files that may contain sensitive data.
 sites/*/settings*.php
 sites/*/services.yml
