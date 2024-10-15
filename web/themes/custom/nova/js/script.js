@@ -27,22 +27,41 @@
       $(document).ready(function ($) {
         var selectElement = $('.view-event-tab .view-filters select');
         var formElement = $('.view-event-tab .view-filters .views-exposed-form');
-        var ulElement = $('<ul class="event-tab-list"></ul>');
-        selectElement.find('option').each(function () {
-          var optionValue = $(this).val();
-          var optionText = $(this).text();
-          var liElement = $('<li></li>')
-            .text(optionText)
-            .attr('data-value', optionValue)
-            .addClass('event-tab-item');
-          liElement.on('click', function () {
-            selectElement.val(optionValue).trigger('change');
-            ulElement.find('li').removeClass('active');
-            $(this).addClass('active');
+        var ulElement = $('.event-tab-list');
+        if (ulElement.length === 0) {
+          ulElement = $('<ul class="event-tab-list"></ul>');
+          selectElement.find('option').each(function () {
+            var optionValue = $(this).val();
+            var optionText = $(this).text();
+            var liElement = $('<li></li>')
+              .text(optionText)
+              .attr('data-value', optionValue)
+              .addClass('event-tab-item');
+            liElement.on('click', function () {
+              selectElement.val(optionValue).trigger('change');
+              ulElement.find('li').removeClass('active');
+              $(this).addClass('active');
+            });
+            ulElement.append(liElement);
           });
-          ulElement.append(liElement);
-        });
-        formElement.after(ulElement);
+          formElement.after(ulElement);
+        } else {
+          ulElement.empty(); 
+          selectElement.find('option').each(function () {
+            var optionValue = $(this).val();
+            var optionText = $(this).text();
+            var liElement = $('<li></li>')
+              .text(optionText)
+              .attr('data-value', optionValue)
+              .addClass('event-tab-item');
+            liElement.on('click', function () {
+              selectElement.val(optionValue).trigger('change');
+              ulElement.find('li').removeClass('active');
+              $(this).addClass('active');
+            });
+            ulElement.append(liElement);
+          });
+        }
         selectElement.hide();
         var initialValue = selectElement.val();
         ulElement.find('li[data-value="' + initialValue + '"]').addClass('active');
