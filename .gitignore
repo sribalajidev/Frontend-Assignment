@@ -9,15 +9,6 @@ sites/*/services.yml
 sites/*/files
 sites/*/private
 
-# Ignore backup files and temporary files.
-*.sql
-*.tar.gz
-*.zip
-*.bak
-*.orig
-*.swp
-*.tmp
-
 # Ignore vendor and contributed code.
 /vendor
 /web/core
