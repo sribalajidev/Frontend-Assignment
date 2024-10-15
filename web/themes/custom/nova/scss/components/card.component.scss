@@ -1,0 +1,199 @@
+@import "../mixins/mixins";
+@import "../base/variables";
+
+.card-wrapper {
+  position: relative;
+  padding-top: 150px;
+  border: 1px solid $lightgray;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.75s ease;
+  .card-header {
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    &::before {
+      position: absolute;
+      content: '';
+      z-index: 9;
+      width: 100%;
+      height: 200px;
+      background: rgba(0, 0, 0, 0.4);
+      opacity: 0;
+      transition: all 0.75s ease;
+    }
+    .card-cost {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 5px 16px;
+      border-radius: 5px;
+      border: 1px solid white;
+      @include font-source-variable (14px, white, 400, 16.94px);
+      z-index: 9;
+    }
+    .card-highlight {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: url(../../images/highlight-icon.png) no-repeat;
+      background-size: cover;
+      width: 50px;
+      height: 50px;
+      z-index: 9;
+    }
+    img {
+      transition: all 0.75s ease;
+      @include media-breakpoint-down(xl) {
+        width: 100%;
+      }
+    }
+    .no-image {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      @include font-source-variable (18px, $charcoalblue, 600, 21.94px);
+      transition: all 0.75s ease;
+      &::before {
+        position: absolute;
+        content: '';
+        top: 15%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: url(../../images/mic.png) no-repeat;
+        width: 60px;
+        height: 50px;
+        background-size: 60px 50px;
+      }
+    }
+  }
+  .card-info-wrapper {
+    z-index: 9;
+    transform: translateY(50px);
+    background: white;
+    transition: all 0.75s ease;
+  }
+  .card-content {
+    padding: 20px 30px;
+    .card-title {
+      @include font-source-variable (18px, $charcoalblue, 600, 21.94px);
+      margin-bottom: 16px;
+    }
+    ul {
+      li {
+        position: relative;
+        padding-left: 24px;
+        margin-bottom: 8px;
+        @include font-source-variable (14px, $fadedblue, 600, 17.06px);
+        &:last-child {
+          margin-bottom: 0;
+        }
+        &::before {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+          content: '';
+        }
+        &.card-tag::before {
+          width: 18px;
+          height: 14px;
+          background: url(../../images/tag.png) no-repeat;
+          background-size: cover;
+        }
+        &.card-date::before {
+          width: 16px;
+          height: 16px;
+          background: url(../../images/date.png) no-repeat;
+          background-size: cover;
+        }
+        &.card-location::before {
+          width: 11px;
+          height: 14px;
+          background: url(../../images/location.png) no-repeat;
+          background-size: cover;
+        }
+      }
+    }
+  }
+  .card-action {
+    display: flex;
+    height: 50px;
+    align-items: center;
+    border-top: 2px solid $lightgray;
+    @include media-breakpoint-down(xl) {
+      display: grid;
+      grid-template-columns: repeat(4, calc(100% / 4));  
+    }
+    @include media-breakpoint-down(md) {
+      grid-template-columns: repeat(3, calc(100% / 3)); 
+    }
+    .card-icon {
+      width: 70px;
+      height: 100%;
+      border-right: 2px solid $lightgray;
+      position: relative;
+      cursor: pointer;
+      @include media-breakpoint-down(xl) {
+        width: 100%;
+      }
+      svg {
+        position: absolute;
+        content: '';
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        path {
+          transition: all 0.75s ease;
+        }
+      }
+      &.card-fav svg {
+        width: 23px;
+        height: 21px;
+      }
+      &.card-download svg {
+        width: 27px;
+        height: 20px;
+      }
+      &.card-share svg {
+        width: 22px;
+        height: 23px;
+      }
+      &:hover svg path {
+        fill: $blue;
+      }
+    }
+    .card-detail {
+      @include font-source-variable (15.94px, $blue, 600, 19.43px);
+      padding-left: 24px;
+      @include media-breakpoint-down(xl) {
+        text-align: center;
+        padding: 10px;
+      }
+      @include media-breakpoint-down(md) {
+        display: none;
+      }
+    }
+  }
+  &:hover {
+    box-shadow: 4px 4px 10px 0px #00000040;
+    .card-header {
+      &::before {
+        opacity: 1;
+      }
+      img, .card-header .no-image {
+        transform: scale(1.1);
+      }
+    } 
+    .card-info-wrapper {
+      transform: translateY(0);
+    }
+  }
+}

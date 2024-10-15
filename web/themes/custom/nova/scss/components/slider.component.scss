@@ -1,0 +1,68 @@
+@import "../mixins/mixins";
+@import "../base/variables";
+
+.slick-slider {
+  position: relative;
+  padding: 0 30px;
+  @include media-breakpoint-down(lg) {
+    padding: 0 15px;
+  }
+  .slick-list {
+    margin: 0 -15px;
+    padding-bottom: 10px;
+  }
+  .slick-slide {
+    margin: 0 15px;
+  }
+  .slick-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    font-size: 0;
+    width: 19px;
+    height: 19px;
+    padding: 0;
+    border: 0;
+    border-top: 5px solid $darkgray;
+    border-left: 5px solid $darkgray;
+    transition: all 0.75s ease;
+    transform: rotate(-45deg);
+    @include media-breakpoint-down(xx) {
+      display: none !important;
+    }
+    &:hover {
+      border-color: $blue;
+    }
+    &.slick-prev {
+      left: -81px;
+    }
+    &.slick-next {
+      right: -81px;
+      transform: rotate(135deg);
+    }
+  }
+  .slick-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px 0;
+    li {
+      button {
+        font-size: 0;
+        width: 20px;
+        height: 20px;
+        display: block;
+        border-radius: 100%;
+        border: 2px solid $skyblue;
+        background: transparent;
+      }
+      &.slick-active {
+        button {
+          background: $skyblue;
+        }
+      }
+    }
+  }
+}

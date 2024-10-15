@@ -1,0 +1,43 @@
+@import "../mixins/mixins";
+@import "../base/variables";
+@import "../base/slick";
+html {
+  scroll-behavior: smooth;
+}
+body {
+  .region-content {
+    padding: 0;
+  }
+  h2 {
+    @include font-source-variable (36px, $charcoalblue, 400, 43.88px);
+    @include media-breakpoint-down(md) {
+      font-size: 21px;
+      line-height: 24px;
+    }
+  }
+  p {
+    @include font-source-variable (18px, $fadedblue, 400, 21.94px);
+    @include media-breakpoint-down(md) {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .intro-block {
+    padding: 80px 0;
+    text-align: center;
+    @include media-breakpoint-down(lg) {
+      padding-bottom: 50px;
+    }
+    @include media-breakpoint-down(lg) {
+      padding-bottom: 30px;
+    }
+    h2, p {
+      margin: 0;
+    }
+  }
+}

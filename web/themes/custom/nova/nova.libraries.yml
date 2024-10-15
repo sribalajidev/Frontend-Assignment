@@ -2,3 +2,13 @@ global-styling:
   css:
     theme:
       css/style.css: {}
+    component:
+      css/components/tab.component.css: {}
+      css/components/card.component.css: {}
+      css/components/slider.component.css: {}
+  js:
+    js/script.js: {}
+    js/slick.min.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

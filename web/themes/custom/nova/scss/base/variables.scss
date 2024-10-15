@@ -1,0 +1,21 @@
+// Font Family Variables
+@import "../fonts/fonts_include";
+$site-font: "Montserrat", sans-serif;
+
+// Color Palette
+$charcoalblue: #424A55;
+$fadedblue: #7C8993;
+$blue: #0B80CE;
+$skyblue: #017FD5;
+$lightgray: #ECECEC;
+$darkgray: #9BA5AC;
+
+// Media Query Breakpoints
+$grid-breakpoints: (
+  xs: 360px,
+  sm: 560px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xx: 1300px,
+) !default;

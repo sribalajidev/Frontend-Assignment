@@ -1,0 +1,84 @@
+@import "../mixins/mixins";
+@import "../base/variables";
+
+.view-event-tab {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 110px;
+  @include media-breakpoint-down(xl) {
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .view-filters {
+    padding-bottom: 27px;
+    .views-exposed-form {
+      .form-item {
+        margin: 0;
+      }
+    }
+    .event-tab-list {
+      display: grid;
+      grid-template-columns: repeat(3, calc(100% / 3));
+      align-items: center;
+      justify-content: space-around;
+      min-height: 30px;
+      border-bottom: 2px solid $skyblue;
+      li {
+        @include font-source-variable (18px, $skyblue, 600, 21.95px);
+        padding-bottom: 23px;
+        position: relative;
+        cursor: pointer;
+        text-align: center;
+        transition: all 0.75s ease;
+        @include media-breakpoint-down(xl) {
+          font-size: 16px;
+          line-height: 18px;
+        }
+        @include media-breakpoint-down(lg) {
+          font-size: 13px;
+          line-height: 14px;
+        }
+        &::before {
+          position: absolute;
+          content: '';
+          width: 10px;
+          height: 10px;
+          border: 0;
+          border-top: 2px solid $skyblue;
+          border-left: 2px solid $skyblue;
+          background: white;
+          bottom: -6px;
+          left: 50%;
+          transform: translateX(-50%) rotate(-135deg);
+          opacity: 0;
+          transition: all 0.5s ease;
+        }
+        &:hover {
+          color: $charcoalblue;
+        }
+        &.active {
+          color: $charcoalblue;
+          font-size: 24px;
+          line-height: 29.26px;
+          @include media-breakpoint-down(xl) {
+            font-size: 21px;
+            line-height: 24px;
+          }
+          @include media-breakpoint-down(lg) {
+            font-size: 16px;
+            line-height: 18px;
+          }
+          @include media-breakpoint-down(sm) {
+            font-size: 13px;
+            line-height: 14px;
+          }
+          &::before {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

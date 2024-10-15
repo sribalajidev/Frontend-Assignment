@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+.slick-slider {
+  position: relative;
+  padding: 0 30px;
+}
+@media (max-width: 991.98px) {
+  .slick-slider {
+    padding: 0 15px;
+  }
+}
+.slick-slider .slick-list {
+  margin: 0 -15px;
+  padding-bottom: 10px;
+}
+.slick-slider .slick-slide {
+  margin: 0 15px;
+}
+.slick-slider .slick-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  font-size: 0;
+  width: 19px;
+  height: 19px;
+  padding: 0;
+  border: 0;
+  border-top: 5px solid #9BA5AC;
+  border-left: 5px solid #9BA5AC;
+  transition: all 0.75s ease;
+  transform: rotate(-45deg);
+}
+@media (max-width: 1299.98px) {
+  .slick-slider .slick-arrow {
+    display: none !important;
+  }
+}
+.slick-slider .slick-arrow:hover {
+  border-color: #0B80CE;
+}
+.slick-slider .slick-arrow.slick-prev {
+  left: -81px;
+}
+.slick-slider .slick-arrow.slick-next {
+  right: -81px;
+  transform: rotate(135deg);
+}
+.slick-slider .slick-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px 0;
+}
+.slick-slider .slick-dots li button {
+  font-size: 0;
+  width: 20px;
+  height: 20px;
+  display: block;
+  border-radius: 100%;
+  border: 2px solid #017FD5;
+  background: transparent;
+}
+.slick-slider .slick-dots li.slick-active button {
+  background: #017FD5;
+}

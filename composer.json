@@ -22,6 +22,8 @@
         "drupal/core-project-message": "^10.3",
         "drupal/core-recommended": "^10.3",
         "drupal/paragraphs": "^1.18",
+        "drupal/quick_node_clone": "^1.18",
+        "drupal/views_autosubmit": "^1.6",
         "drush/drush": "^13.3"
     },
     "conflict": {

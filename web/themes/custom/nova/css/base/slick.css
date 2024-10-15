@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 /* Slider */
 .slick-slider {
   position: relative;
@@ -103,60 +102,4 @@
 
 .slick-arrow.slick-hidden {
   display: none;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body .region-content {
-  padding: 0;
-}
-body h2 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 36px;
-  color: #424A55;
-  font-weight: 400;
-  line-height: 43.88px;
-}
-@media (max-width: 767.98px) {
-  body h2 {
-    font-size: 21px;
-    line-height: 24px;
-  }
-}
-body p {
-  font-family: "Montserrat", sans-serif;
-  font-size: 18px;
-  color: #7C8993;
-  font-weight: 400;
-  line-height: 21.94px;
-}
-@media (max-width: 767.98px) {
-  body p {
-    font-size: 12px;
-    line-height: 16px;
-  }
-}
-body ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-body .intro-block {
-  padding: 80px 0;
-  text-align: center;
-}
-@media (max-width: 991.98px) {
-  body .intro-block {
-    padding-bottom: 50px;
-  }
-}
-@media (max-width: 991.98px) {
-  body .intro-block {
-    padding-bottom: 30px;
-  }
-}
-body .intro-block h2, body .intro-block p {
-  margin: 0;
 }

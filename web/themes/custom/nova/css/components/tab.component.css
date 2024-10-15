@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+.view-event-tab {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 110px;
+}
+@media (max-width: 1199.98px) {
+  .view-event-tab {
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+.view-event-tab .view-filters {
+  padding-bottom: 27px;
+}
+.view-event-tab .view-filters .views-exposed-form .form-item {
+  margin: 0;
+}
+.view-event-tab .view-filters .event-tab-list {
+  display: grid;
+  grid-template-columns: repeat(3, 33.3333333333%);
+  align-items: center;
+  justify-content: space-around;
+  min-height: 30px;
+  border-bottom: 2px solid #017FD5;
+}
+.view-event-tab .view-filters .event-tab-list li {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  color: #017FD5;
+  font-weight: 600;
+  line-height: 21.95px;
+  padding-bottom: 23px;
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.75s ease;
+}
+@media (max-width: 1199.98px) {
+  .view-event-tab .view-filters .event-tab-list li {
+    font-size: 16px;
+    line-height: 18px;
+  }
+}
+@media (max-width: 991.98px) {
+  .view-event-tab .view-filters .event-tab-list li {
+    font-size: 13px;
+    line-height: 14px;
+  }
+}
+.view-event-tab .view-filters .event-tab-list li::before {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 10px;
+  border: 0;
+  border-top: 2px solid #017FD5;
+  border-left: 2px solid #017FD5;
+  background: white;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-135deg);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.view-event-tab .view-filters .event-tab-list li:hover {
+  color: #424A55;
+}
+.view-event-tab .view-filters .event-tab-list li.active {
+  color: #424A55;
+  font-size: 24px;
+  line-height: 29.26px;
+}
+@media (max-width: 1199.98px) {
+  .view-event-tab .view-filters .event-tab-list li.active {
+    font-size: 21px;
+    line-height: 24px;
+  }
+}
+@media (max-width: 991.98px) {
+  .view-event-tab .view-filters .event-tab-list li.active {
+    font-size: 16px;
+    line-height: 18px;
+  }
+}
+@media (max-width: 559.98px) {
+  .view-event-tab .view-filters .event-tab-list li.active {
+    font-size: 13px;
+    line-height: 14px;
+  }
+}
+.view-event-tab .view-filters .event-tab-list li.active::before {
+  opacity: 1;
+}
